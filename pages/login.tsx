@@ -8,7 +8,7 @@ function Login() {
         height: 'fit-content',
         width:'auto',
         margin:12,
-        border: '1px solid white',
+        
         paddingBottom:5,
         display:'flex',
         flexDirection: 'column',
@@ -19,7 +19,7 @@ function Login() {
         }
     }))
     return ( <PageContainer>
-        <div style={{color: 'white'}}><strong>hi</strong></div>
+        
         <LoginForm/>
         </PageContainer> );
 }

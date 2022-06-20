@@ -26,8 +26,7 @@ function NavBar() {
             <LinkGroup variant='text' >
                 <MyLink name={'Home'} url={'/'} />
                 <MyLink name={'StaticPaths'} url={'/SSRP'} shouldPreFetch={false} />
-                <MyLink name={'Static'} url={'/SSR'} />
-                <MyLink name={'ISR'} url={'/ISR'} />
+                <MyLink name={'Protected'} url={'/profile'} />
             </LinkGroup>
 
         </GroupBoxMain>

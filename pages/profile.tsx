@@ -17,6 +17,7 @@ return (
   <Image
     src={`${dog}`}
     alt="Picture of a dog"
+    quality={100}
     width={250}
     height={250}
   />
