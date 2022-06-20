@@ -23,3 +23,12 @@ Content-Type: application/json
     "username": "admin",
     "password": "admin"
 }
+
+
+###
+
+GET https://rickandmortyapi.com/api/character
+
+
+###
+GET https://rickandmortyapi.com/api/character/40

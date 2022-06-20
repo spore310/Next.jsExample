@@ -15,9 +15,9 @@ const handler = nc<NextApiRequest, NextApiResponse>({
         const {antraAuth} = req.cookies;
         //decode the cookie
         const decodeLayer = verify(antraAuth,'antra');
-        console.log(decodeLayer);
+        
 
-        res.status(200).json({message:'Success!',data: {user: decodeLayer}});
+        res.status(200).json({message:'profile'});
 
     
    

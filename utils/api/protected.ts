@@ -5,7 +5,7 @@ const middlerware = nc<NextApiRequest, NextApiResponse>().use('/',(req,res,next)
     if(antraAuth === undefined){
         res.status(401).json({message:'not logged in'});
     }else{
-    console.log('from protected route!', antraAuth);
+    
     next();
 }
 })
