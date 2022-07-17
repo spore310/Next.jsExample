@@ -25,7 +25,7 @@ function NavBar() {
 
             <LinkGroup variant='text' >
                 <MyLink name={'Home'} url={'/'} />
-                <MyLink name={'StaticPaths'} url={'/SSRP'} shouldPreFetch={false} />
+                <MyLink name={'StaticPaths'} url={'/SSRP'} shouldPreFetch={true} />
                 <MyLink name={'Protected'} url={'/profile'} />
             </LinkGroup>
 

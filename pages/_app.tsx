@@ -7,18 +7,19 @@ const darkTheme = createTheme({
   palette: {
     mode: 'dark',
   },
-  
+
 });
 function MyApp({ Component, pageProps }: AppProps) {
-  const options= {refreshInterval: 5000}  
-  return (<ThemeProvider theme={darkTheme}>
-<SWRConfig value={options}>
-  
-        <NavBar/>
-        <Component {...pageProps} />
-        
-</SWRConfig>
-    </ThemeProvider>)
+  const options = { refreshInterval: 5000 }
+  return (
+  <ThemeProvider theme={darkTheme}>
+    <SWRConfig value={options}>
+
+      <NavBar />
+      <Component {...pageProps} />
+
+    </SWRConfig>
+  </ThemeProvider>)
 }
 
 export default MyApp
