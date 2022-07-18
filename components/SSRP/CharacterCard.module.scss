@@ -1,0 +1,15 @@
+.card{
+    display:flex;
+    border-radius: 10px;
+    color: white;
+    background-color: #3C3E44;
+    height: 300px;
+}
+
+.image{
+    border-radius: 10px 0 0 10px;
+}
+
+.card-info{
+    padding-left: 1em;
+}

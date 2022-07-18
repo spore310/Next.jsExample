@@ -1,0 +1,46 @@
+$gap: 2em;
+
+.grid-layout{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $gap;
+    .card{
+        width: 700px;
+    
+    }
+}
+.list-layout{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: $gap;
+    width: 50%;
+    margin: auto;
+    .card{
+        min-width: 700px;
+    }
+}
+
+.btn-toggle{
+    display:block;
+    cursor: pointer;
+}
+
+.card{
+    cursor: pointer;
+    &:hover{
+        animation-name: hoverAnimation;
+        animation-duration: .2s;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes hoverAnimation {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}
