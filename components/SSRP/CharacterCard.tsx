@@ -5,9 +5,9 @@ const CharacterCard = ({char, routeTo}:any) =>{
 //id: ele.id, name:ele.name, image:ele.image, status: ele.status,species:ele.species
     return(
         <div className={styles.card}>
-            <section >
-                <Image className={styles.image} src={char.image}  height={300} width={300} quality={100}/>
-            </section>
+            <div className={styles.imageBorder}>
+                <Image className={styles.image} src={char.image} layout='responsive' height={256} width={300}  quality={100}/>
+            </div>
             <section className={styles["card-info"]}>
                 <p>Name:  {char.name}</p>
                 <p>Status:  {char.status}</p>
