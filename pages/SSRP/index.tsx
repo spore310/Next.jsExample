@@ -2,6 +2,9 @@ import { Box, Typography } from '@mui/material';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import {useRouter} from 'next/router';
+import {styled } from '@mui/material/styles';
+import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
+import ViewListRoundedIcon from '@mui/icons-material/ViewListRounded';
 import CharacterCard from '../../components/SSRP/CharacterCard';
 import styles from './SSRP.module.scss'
 //import CardInfo from '../../components/SSRP/menuList';
@@ -30,9 +33,22 @@ const SSRIndex = () =>{
         })}</ul>
     </Container>)
     */
+    const GridIcon = styled(GridViewRoundedIcon)(({theme})=>({
+        height:60,
+        width:60,
+        color:"white"
+    }))
+    const ListIcon = styled(ViewListRoundedIcon)(({theme})=>({
+        height:60,
+        width:60,
+        color:"white"
+    }))
+
    return (
     <>
-        <button className={styles["btn-toggle"]} onClick={()=>setToggle(!toggle)}>mode:{toggle ? "grid" : "list"}</button>
+        <button className={styles["btn-toggle"]} onClick={()=>setToggle(!toggle)}>
+            {toggle ? <GridIcon /> : <ListIcon />}
+        </button>
         <ul className={styles[toggle ? "grid-layout" : "list-layout"]}>
         {
             list.map((ele:any)=>
