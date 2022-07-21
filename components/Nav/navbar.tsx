@@ -9,11 +9,11 @@ import axios from 'axios';
 import {useRouter} from 'next/router';
 function NavBar() {
     const fetcher = (url:string) => axios.get(url).then()
-    const {data:User, error,} = useSWR('https://next-example-test.herokuapp.com/api/auth/secret', fetcher,{refreshInterval: 1});
+    const {data:User, error,} = useSWR('/api/auth/secret', fetcher,{refreshInterval: 1});
     
     const router = useRouter();
     const handleLogout = async(e:any) =>{
-        const {status} = await axios.delete('http://localhost:3000/api/auth/logout');
+        const {status} = await axios.delete('/api/auth/logout');
 
         if(status === 200){
             router.push('/login');
