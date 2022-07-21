@@ -1,7 +1,16 @@
+@mixin status-bubble(){
+    border-radius:5px;
+    width:10px;
+    height:10px;
+    font-size: 16px;
+    margin-right: .5em;
+    transform: translateY(6px);
+}
+
 .card{
     display:flex;
     border-radius: 10px;
-    color: white;
+    color: #F5F5F5;
     background-color: #3C3E44;
     height: 300px;
 }
@@ -13,7 +22,40 @@
 .image{
     border-radius: 10px 0 0 10px;
 }
-
+.not-alive-img{
+    opacity: .3;
+}
 .card-info{
     padding-left: 1em;
+}
+
+.name{
+    font-size: 30px;
+    margin-bottom: 0;
+}
+.descriptor{
+    color: #9E9E9E;
+    font-size: 15px;
+    margin-bottom: 0;
+    
+}
+.description{
+    font-size: 17px;
+    margin-top: 0;
+}
+.status{
+    display:flex;
+}
+
+.character-status-unknown{
+    @include status-bubble();
+    background-color: #9E9E9E;
+}
+.character-status-alive{
+    @include status-bubble();
+    background-color: #61FF00;
+}
+.character-status-dead{
+    @include status-bubble();
+    background-color: #EA3434;
 }
