@@ -9,7 +9,7 @@ import axios from 'axios';
 import {useRouter} from 'next/router';
 function NavBar() {
     const fetcher = (url:string) => axios.get(url).then()
-    const {data:User, error,} = useSWR('http://localhost:3000/api/auth/secret', fetcher,{refreshInterval: 1});
+    const {data:User, error,} = useSWR('https://next-example-test.herokuapp.com/api/auth/secret', fetcher,{refreshInterval: 1});
     
     const router = useRouter();
     const handleLogout = async(e:any) =>{
