@@ -6,6 +6,8 @@ import { ParsedUrlQuery } from 'querystring';
 import { Typography } from '@mui/material';
 import {useRouter} from 'next/router';
 import Image from 'next/image';
+import {client} from '../../apollo-client';
+import {gql} from '@apollo/client';
 interface IParams extends ParsedUrlQuery {
   id: string
 }
@@ -13,15 +15,14 @@ const RickAndMorty = ({character}:any)=>{
     const router = useRouter();
     if(router.isFallback)return(<Typography variant='h1' component='div' color='white'>Loading...</Typography>);
     
-    const episodeIDS:number[] = character.episode.map((ep:string)=>ep.slice(40));
     
     return(
     <>
     
     <Typography variant='h2' color='white'component='div'>Name: {character?.name}</Typography>
     <Image src={character.image} width={100} height={100} alt='Rick And Morty Avatar Image'/>
-    
-    {episodeIDS.map((ep:number,index:number)=><Typography variant='body2' color='white' component='div' key={index}>Episode: {ep}</Typography>)}
+    <Typography variant='body1' color='white' component='div'>Gender: {character?.gender}</Typography>
+    <Typography variant='body1' color='white' component='div'>Spieces: {character?.species}</Typography>
     </>
     );
 
@@ -41,11 +42,38 @@ export const getStaticPaths:GetStaticPaths = async() =>{
 
 export const getStaticProps:GetStaticProps = async({params})=>{
   const {id} = params as IParams
-  const {data,status} = await axios.get(`https://rickandmortyapi.com/api/character/${id}`);
-  if(status===200){
+  const {data} = await client.query({
+    query: gql`
+    query getCharacterInfo($char:ID!) {
+      character(id:$char){
+        id,
+        name,
+        gender,
+        status,
+        species,
+        type,
+        image,
+        location{
+          name,
+          dimension
+        },
+        origin{
+          name,
+          dimension
+        },
+        episode{
+          name,
+          episode
+        }
+      }
+    }
+    `,
+    variables:{char: id}
+  })
+  if(data?.character){
     
     return{
-      props:{character: data},
+      props:{character: data.character},
       revalidate:10
     }
   }else{
