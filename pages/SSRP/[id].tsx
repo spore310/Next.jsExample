@@ -5,6 +5,7 @@ import axios from 'axios';
 import { ParsedUrlQuery } from 'querystring';
 import { Typography } from '@mui/material';
 import {useRouter} from 'next/router';
+import Image from 'next/image';
 interface IParams extends ParsedUrlQuery {
   id: string
 }
@@ -12,11 +13,15 @@ const RickAndMorty = ({character}:any)=>{
     const router = useRouter();
     if(router.isFallback)return(<Typography variant='h1' component='div' color='white'>Loading...</Typography>);
     
+    const episodeIDS:number[] = character.episode.map((ep:string)=>ep.slice(40));
+    
     return(
     <>
     
-    <Typography variant='h2' color='white'component='div'>{character?.name}</Typography>
-    <Typography variant='body2' color='white' component='div'>{character?.created}</Typography>
+    <Typography variant='h2' color='white'component='div'>Name: {character?.name}</Typography>
+    <Image src={character.image} width={100} height={100} alt='Rick And Morty Avatar Image'/>
+    
+    {episodeIDS.map((ep:number,index:number)=><Typography variant='body2' color='white' component='div' key={index}>Episode: {ep}</Typography>)}
     </>
     );
 

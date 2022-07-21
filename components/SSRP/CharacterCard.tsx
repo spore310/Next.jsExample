@@ -13,6 +13,7 @@ const CharacterCard = ({char, routeTo}:any) =>{
                 <p>Status:  {char.status}</p>
                 <p>Species:  {char.species}</p>
                 
+                
             </section>
         </div>
     )
