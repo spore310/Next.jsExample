@@ -20,6 +20,7 @@ const CharacterCard = ({char, routeTo}:any) =>{
                 <p className={styles.descriptor}>First seen in:</p>
                 <p className={styles.description}>Test2</p>
                 
+                
             </section>
         </div>
     )

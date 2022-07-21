@@ -53,7 +53,7 @@ const SSRIndex = () =>{
         {
             list.map((ele:any)=>
             {
-                const cardInfo = {id: ele.id, name:ele.name, image:ele.image, status: ele.status,species:ele.species}
+                const cardInfo = {id: ele.id, name:ele.name, image:ele.image, status: ele.status,species:ele.species, episode: ele.episode}
                 return <li className={styles.card} key={ele?.id} onClick={()=>{handleClick(ele.id.toString())}}> <CharacterCard  char={cardInfo}/></li>
             })
         }
