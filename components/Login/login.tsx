@@ -24,7 +24,7 @@ const LoginForm:FC = () =>{
                   
                }
             }catch(e:any){
-               setErrorMessage(e?.response?.data?.message);
+               setErrorMessage("invalid username or password");
                
             }
             setSubmitting(false);
@@ -57,6 +57,7 @@ const LoginForm:FC = () =>{
                onBlur={handleBlur} 
                onChange={handleChange}
                />
+               
        </StyledBox>   
                
        <FormGroup>

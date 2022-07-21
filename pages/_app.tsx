@@ -2,20 +2,24 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import NavBar from '../components/Nav/navbar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { SWRConfig } from 'swr';
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
   },
-  
+
 });
 function MyApp({ Component, pageProps }: AppProps) {
-  
-  return (<ThemeProvider theme={darkTheme}>
+  const options = { refreshInterval: 5000 }
+  return (
+  <ThemeProvider theme={darkTheme}>
+    <SWRConfig value={options}>
 
-      <NavBar/>
+      <NavBar />
       <Component {...pageProps} />
-      
-    </ThemeProvider>)
+
+    </SWRConfig>
+  </ThemeProvider>)
 }
 
 export default MyApp
