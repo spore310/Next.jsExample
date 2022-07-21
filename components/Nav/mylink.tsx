@@ -9,13 +9,13 @@ interface Props{
     shouldPreFetch?:boolean;
     disabled?:boolean;
 }
-const MyLink: FC<Props> = ({ url, name, shouldPreFetch , disabled}) => {
+const MyLink: FC<Props> = ({ url, name,  disabled}) => {
 
     const StyledButton = styled(Button)(({theme})=>({
         
     }))
     return (
-        <Link href={url} prefetch={shouldPreFetch} passHref>
+        <Link href={url}  passHref>
             <StyledButton disabled={disabled}>{name || url.split("").splice(1).join("")}</StyledButton>
         </Link>
     );
