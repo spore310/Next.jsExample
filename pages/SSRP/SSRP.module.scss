@@ -1,51 +1,51 @@
 $gap: 2em;
 
-.grid-layout{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: $gap;
-    .card{
-        width: 700px;
-    
-    }
+.grid-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $gap;
+  .card {
+    width: 700px;
+  }
 }
-.list-layout{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: $gap;
-    width: 50%;
-    margin: auto;
-    .card{
-        min-width: 700px;
-    }
-}
-
-.btn-toggle{
-    display:block;
-    cursor: pointer;
-    margin-left:auto;
-    margin-right:1em;
-    background-color: rgba(0,0,0,0);
-    border: none;
-    padding: 0;
+.list-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $gap;
+  width: 50%;
+  margin: auto;
+  .card {
+    min-width: 700px;
+  }
 }
 
-.card{
-    cursor: pointer;
-    &:hover{
-        animation-name: hoverAnimation;
-        animation-duration: .2s;
-        transform: scale(1.2);
-    }
+.btn-toggle {
+  display: block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 1em;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+}
+
+.card {
+  cursor: pointer;
+  &:hover {
+    animation-name: hoverAnimation;
+    animation-duration: 0.2s;
+    transform: scale(1.2);
+    z-index: 100;
+  }
 }
 
 @keyframes hoverAnimation {
-    from{
-        transform: scale(1);
-    }
-    to{
-        transform: scale(1.2);
-    }
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
