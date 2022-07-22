@@ -11,11 +11,16 @@ import {gql} from '@apollo/client';
 interface IParams extends ParsedUrlQuery {
   id: string
 }
+interface episode{
+  episode:string;
+  name:string;
+  id:string;
+}
 const RickAndMorty = ({character}:any)=>{
     const router = useRouter();
     if(router.isFallback)return(<Typography variant='h1' component='div' color='white'>Loading...</Typography>);
     
-    
+    const episodeList = character.episode.map((ep:episode) =><Typography key={ep.id} variant='body1' color='white' component='div'>{ep.episode}: {ep.name}</Typography>)
     return(
     <>
     
@@ -23,6 +28,7 @@ const RickAndMorty = ({character}:any)=>{
     <Image src={character.image} width={100} height={100} alt='Rick And Morty Avatar Image'/>
     <Typography variant='body1' color='white' component='div'>Gender: {character?.gender}</Typography>
     <Typography variant='body1' color='white' component='div'>Spieces: {character?.species}</Typography>
+    {episodeList}
     </>
     );
 
@@ -63,7 +69,8 @@ export const getStaticProps:GetStaticProps = async({params})=>{
         },
         episode{
           name,
-          episode
+          episode,
+          id
         }
       }
     }
