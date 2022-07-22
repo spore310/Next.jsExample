@@ -19,7 +19,7 @@ interface episode{
 const RickAndMorty = ({character}:any)=>{
     const router = useRouter();
     if(router.isFallback)return(<Typography variant='h1' component='div' color='white'>Loading...</Typography>);
-    
+     
     const episodeList = character.episode.map((ep:episode) =><Typography key={ep.id} variant='body1' color='white' component='div'>{ep.episode}: {ep.name}</Typography>)
     return(
     <>
