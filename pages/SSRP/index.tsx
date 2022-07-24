@@ -38,7 +38,7 @@ const SSRIndex = () => {
 
   return (
     <>
-    <Test/> {/** Test component for client side graphql */}
+    <Test/> {/** Test component for client side graphql, still in development */}
       <button
         className={styles["btn-toggle"]}
         onClick={() => setToggle(!toggle)}
