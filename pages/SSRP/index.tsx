@@ -1,4 +1,3 @@
-import { Box, Typography } from "@mui/material";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
@@ -7,8 +6,7 @@ import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 import ViewListRoundedIcon from "@mui/icons-material/ViewListRounded";
 import CharacterCard from "../../components/SSRP/CharacterCard";
 import styles from "./SSRP.module.scss";
-//import CardInfo from '../../components/SSRP/menuList';
-//import { Container } from '../../components/SSRP/styledComps';
+import Test from "../../components/SSRP/CharacterClientGraph";
 const SSRIndex = () => {
   const [list, setList] = useState<Array<Object>>([]);
   const [toggle, setToggle] = useState<boolean>(false);
@@ -26,15 +24,7 @@ const SSRIndex = () => {
   useEffect(() => {
     getData().then((res) => setList(res));
   }, []);
-  /*
-    return(<Container>
-        <ul>{list.map((ele:any)=>{
-            const cardInfo = {id: ele.id, name:ele.name, image:ele.image, status: ele.status,species:ele.species}
-            return <li key={ele?.id} onClick={()=>{handleClick(ele.id.toString())}}> <CardInfo  char={cardInfo}/></li>
-            
-        })}</ul>
-    </Container>)
-    */
+  
   const GridIcon = styled(GridViewRoundedIcon)(({ theme }) => ({
     height: 60,
     width: 60,
@@ -48,6 +38,7 @@ const SSRIndex = () => {
 
   return (
     <>
+    <Test/> {/** Test component for client side graphql */}
       <button
         className={styles["btn-toggle"]}
         onClick={() => setToggle(!toggle)}
