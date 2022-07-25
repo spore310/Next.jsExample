@@ -24,7 +24,9 @@ const SSRIndex = () => {
   useEffect(() => {
     getData().then((res) => setList(res));
   }, []);
-  
+
+  console.log("list", list);
+
   const GridIcon = styled(GridViewRoundedIcon)(({ theme }) => ({
     height: 60,
     width: 60,
@@ -38,7 +40,8 @@ const SSRIndex = () => {
 
   return (
     <>
-    <Test/> {/** Test component for client side graphql, still in development */}
+      <Test />{" "}
+      {/** Test component for client side graphql, still in development */}
       <button
         className={styles["btn-toggle"]}
         onClick={() => setToggle(!toggle)}
@@ -54,6 +57,8 @@ const SSRIndex = () => {
             status: ele.status,
             species: ele.species,
             episode: ele.episode,
+            location: ele.location.name,
+            origin: ele.origin.name,
           };
           return (
             <li
