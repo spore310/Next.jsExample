@@ -29,9 +29,9 @@ const CharacterCard = ({ char, routeTo }: any) => {
           </span>
         </div>
         <p className={styles.descriptor}>Last known location:</p>
-        <p className={styles.description}>Test1</p>
+        <p className={styles.description}>{char.location}</p>
         <p className={styles.descriptor}>First seen in:</p>
-        <p className={styles.description}>Test2</p>
+        <p className={styles.description}>{char.origin}</p>
       </section>
     </div>
   );

@@ -41,6 +41,60 @@ $gap: 2em;
   }
 }
 
+.name {
+  text-align: center;
+}
+.general {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 45%;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.wiki {
+  // width: 817px;
+  padding: 30px;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 50%;
+  height: 80%;
+  background-color: black;
+  border-radius: 20px;
+}
+
+.episodeList {
+  background-color: black;
+  overflow: auto;
+  height: 300px;
+  border-radius: 16px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.episode {
+  margin-left: 30px;
+  width: 55%;
+}
+
+.episodeItem {
+  cursor: pointer;
+}
+
+.info {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(60, 62, 48);
+  border-radius: 16px;
+}
 @keyframes hoverAnimation {
   from {
     transform: scale(1);
