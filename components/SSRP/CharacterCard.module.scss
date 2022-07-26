@@ -1,10 +1,11 @@
-@mixin status-bubble() {
+@mixin status-bubble($w, $h) {
   border-radius: 5px;
-  width: 10px;
-  height: 10px;
+  width: $w;
+  height: $h;
   font-size: 16px;
   margin-right: 0.5em;
-  transform: translateY(6px);
+  //  transform: translateY(6px);
+  transform: translateY(1px);
 }
 
 .card {
@@ -50,17 +51,20 @@
 }
 .status {
   display: flex;
+  align-items: center;
+  align-content: center;
+  height: 30px;
 }
 
 .character-status-unknown {
-  @include status-bubble();
+  @include status-bubble(10px, 10px);
   background-color: #9e9e9e;
 }
 .character-status-alive {
-  @include status-bubble();
+  @include status-bubble(10px, 10px);
   background-color: #61ff00;
 }
 .character-status-dead {
-  @include status-bubble();
+  @include status-bubble(10px, 10px);
   background-color: #ea3434;
 }
