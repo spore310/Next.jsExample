@@ -25,7 +25,7 @@ const SSRIndex = () => {
     getData().then((res) => setList(res));
   }, []);
 
-  console.log("list", list);
+  
 
   const GridIcon = styled(GridViewRoundedIcon)(({ theme }) => ({
     height: 60,

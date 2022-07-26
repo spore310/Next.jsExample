@@ -31,4 +31,4 @@ GET https://rickandmortyapi.com/api/character
 
 
 ###
-GET https://rickandmortyapi.com/api/character/40
+GET https://rickandmortyapi.com/api/character/?page=42

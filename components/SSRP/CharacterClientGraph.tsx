@@ -1,11 +1,11 @@
 import ClientSide from '../../client-sideOnly';
-import TestSide from './CharacterList';
+import {CharacterList} from './CharacterList';
 
 export default function Test(){
 
     return(
         <ClientSide>
-            <TestSide/>
+            <CharacterList/>
         </ClientSide>
     )
 }
