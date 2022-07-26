@@ -40,14 +40,23 @@ const RickAndMorty = ({ character }: any) => {
   ));
   return (
     <div className={styles.wiki}>
-      <Typography
-        variant="h2"
-        color="white"
-        component="div"
-        className={styles.name}
-      >
-        Name: {character?.name}
-      </Typography>
+      <div className={styles.header}>
+        <Typography
+          variant="h2"
+          color="white"
+          component="div"
+          className={styles.name}
+        >
+          Name: {character?.name}
+        </Typography>
+
+        <div
+          className={
+            styles[`character-status-${character.status.toLowerCase()}`]
+          }
+        ></div>
+      </div>
+
       <div className={styles.profile}>
         <Image
           src={character.image}
@@ -62,30 +71,37 @@ const RickAndMorty = ({ character }: any) => {
         <div className={styles.general}>
           {" "}
           <Typography variant="body1" color="white" component="div">
-            ID: <span>{character?.id}</span>
+            <span className={styles.infoName}>ID: </span>
+            <span>{character?.id}</span>
           </Typography>
           <Typography variant="body1" color="white" component="div">
-            Gender: {character?.gender}
+            <span className={styles.infoName}>Gender: </span>
+            {character?.gender}
           </Typography>
           <Typography variant="body1" color="white" component="div">
-            Spieces: {character?.species}
+            <span className={styles.infoName}>Spieces: </span>
+            {character?.species}
           </Typography>
           <Typography variant="body1" color="white" component="div">
-            Status: {character?.status}
+            <span className={styles.infoName}>Status: </span>
+            {character?.status}
           </Typography>
           <Typography variant="body1" color="white" component="div">
-            Type: {character.type === "" ? "N/A" : character?.type}
+            <span className={styles.infoName}>Type: </span>
+            {character.type === "" ? "N/A" : character?.type}
           </Typography>
           <Typography variant="body1" color="white" component="div">
-            Location: {character?.location.name}
+            <span className={styles.infoName}>Location: </span>
+            {character?.location.name}
           </Typography>
           <Typography variant="body1" color="white" component="div">
-            Origin: {character?.origin.name}
+            <span className={styles.infoName}>Origin: </span>
+            {character?.origin.name}
           </Typography>
         </div>{" "}
         <div className={styles.episode}>
           <Typography variant="body1" color="white" component="div">
-            Episodes:
+            <span className={styles.infoName}>Seen In: </span>
           </Typography>
           <div className={styles.episodeList}>{episodeList}</div>
         </div>
